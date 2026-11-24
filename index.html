@@ -1,0 +1,120 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abogados para tu Caso | Laura Gómez & David Montiel</title>
+  <meta name="description" content="Asesoría legal en derecho de familia, laboral, civil y comercial.">
+  <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap)" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="nav">
+  <a href="#inicio" class="logo">⚖️ Abogados<span>para tu Caso</span></a>
+  <button class="menu-btn" aria-label="Abrir menú">☰</button>
+  <nav class="links">
+    <a href="#sobre">Sobre nosotros</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#novedades">Novedades</a>
+    <a href="#contacto" class="btn-sm">Contacto</a>
+  </nav>
+</header>
+
+<section id="inicio" class="hero">
+  <div class="hero-text reveal">
+    <h1>Tu caso merece <em>defensa seria</em> y trato humano</h1>
+    <p>Más de 12 años acompañando a personas y empresas a resolver sus conflictos legales con claridad y compromiso.</p>
+    <div class="hero-btns">
+      <a href="#contacto" class="btn">Agenda tu consulta</a>
+      <a href="#servicios" class="btn-outline">Ver servicios</a>
+    </div>
+    <div class="stats">
+      <div><strong class="count" data-target="850">0</strong><span>Casos atendidos</span></div>
+      <div><strong class="count" data-target="12">0</strong><span>Años de experiencia</span></div>
+      <div><strong class="count" data-target="96">0</strong><span>% clientes satisfechos</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="sobre" class="section">
+  <h2 class="reveal">Sobre nosotros</h2>
+  <p class="sub reveal">Un equipo que escucha, explica y defiende.</p>
+  <div class="team">
+    <article class="card reveal">
+      <div class="avatar">LG</div>
+      <h3>Laura Gómez</h3>
+      <p class="role">Socia fundadora · Derecho de Familia y Civil</p>
+      <p>Abogada de la Universidad Nacional, especialista en Derecho de Familia. Ha llevado más de 400 procesos de divorcio, custodia, alimentos y sucesiones, siempre buscando acuerdos que protejan a los niños y a las familias.</p>
+    </article>
+    <article class="card reveal">
+      <div class="avatar">DM</div>
+      <h3>David Montiel</h3>
+      <p class="role">Socio fundador · Derecho Laboral y Comercial</p>
+      <p>Abogado de la Universidad del Rosario, magíster en Derecho Laboral. Asesora a trabajadores y pymes en despidos, liquidaciones, contratos y constitución de empresas.</p>
+    </article>
+  </div>
+</section>
+
+<section id="servicios" class="section alt">
+  <h2 class="reveal">Servicios</h2>
+  <p class="sub reveal">Toca cada servicio para ver más detalles.</p>
+  <div class="services">
+    <div class="service reveal"><span>👨‍👩‍👧</span><h3>Derecho de Familia</h3><p class="more">Divorcios, custodia, cuota alimentaria, sucesiones y uniones maritales de hecho.</p></div>
+    <div class="service reveal"><span>💼</span><h3>Derecho Laboral</h3><p class="more">Despidos injustificados, liquidaciones, acoso laboral y pensiones.</p></div>
+    <div class="service reveal"><span>🏠</span><h3>Derecho Civil</h3><p class="more">Contratos, arrendamientos, compraventa de inmuebles y cobro de deudas.</p></div>
+    <div class="service reveal"><span>🏢</span><h3>Derecho Comercial</h3><p class="more">Constitución de empresas, contratos comerciales y asesoría a emprendedores.</p></div>
+    <div class="service reveal"><span>📜</span><h3>Tutelas y Derechos de Petición</h3><p class="more">Protección rápida de tus derechos fundamentales: salud, educación, debido proceso.</p></div>
+    <div class="service reveal"><span>🤝</span><h3>Conciliación</h3><p class="more">Resolvemos conflictos sin llegar a juicio, ahorrando tiempo y dinero.</p></div>
+  </div>
+</section>
+
+<section id="novedades" class="section">
+  <h2 class="reveal">Novedades e historias</h2>
+  <p class="sub reveal">Nuevos servicios, casos de éxito y consejos legales.</p>
+  <div class="posts">
+    {% for post in site.posts limit:6 %}
+    <article class="post reveal">
+      <span class="tag">{{ post.categoria | default: "Noticia" }}</span>
+      <h3>{{ post.title }}</h3>
+      <time>{{ post.date | date: "%d/%m/%Y" }}</time>
+      <p>{{ post.content | strip_html | truncatewords: 30 }}</p>
+      <a href="{{ post.url | relative_url }}">Leer más →</a>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section id="contacto" class="section alt">
+  <h2 class="reveal">Contacto</h2>
+  <p class="sub reveal">Primera consulta de orientación sin costo.</p>
+  <div class="contact">
+    <div class="info reveal">
+      <p>📍 Calle 72 # 10-34, Oficina 501, Bogotá</p>
+      <p>📞 +57 300 123 4567</p>
+      <p>✉️ contacto@abogadosparatucaso.com</p>
+      <p>🕘 Lunes a viernes, 8:00 a.m. – 6:00 p.m.</p>
+      <a class="btn" href="[wa.me](https://wa.me/573001234567?text=Hola,%20quiero%20una%20asesoría)" target="_blank">Escríbenos por WhatsApp</a>
+    </div>
+    <form class="form reveal" action="[formspree.io](https://formspree.io/f/TU_CODIGO)" method="POST">
+      <input name="nombre" placeholder="Nombre completo" required>
+      <input name="email" type="email" placeholder="Correo electrónico" required>
+      <select name="area">
+        <option>Familia</option><option>Laboral</option><option>Civil</option>
+        <option>Comercial</option><option>Tutela</option><option>Otro</option>
+      </select>
+      <textarea name="mensaje" rows="4" placeholder="Cuéntanos tu caso" required></textarea>
+      <button class="btn" type="submit">Enviar mensaje</button>
+    </form>
+  </div>
+</section>
+
+<footer>© {{ site.time | date: "%Y" }} Abogados para tu Caso · Laura Gómez & David Montiel</footer>
+
+<a href="[wa.me](https://wa.me/573001234567)" class="wa" target="_blank" aria-label="WhatsApp">💬</a>
+<script src="script.js"></script>
+</body>
+</html>
